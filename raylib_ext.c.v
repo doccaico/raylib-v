@@ -2,17 +2,30 @@ module raylib
 
 $if windows {
 	#flag -I @VMODROOT/include
-	#flag -L @VMODROOT/lib/windows
+	#flag -DNOUSER -DNOSHOWWINDOW -DNOGDI
 
-	#flag -DNOUSER -DNOSHOWWINDOW -DNOGDI -D_NDEBUG -DNDEBUG
+	$if msvc {
+		#flag -L @VMODROOT/lib/windows/msvc16
+		#flag raylib.lib user32.lib shell32.lib gdi32.lib winmm.lib
+		#flag /NODEFAULTLIB:MSVCRT
 
-	#flag -lraylib@START_LIBS -lgdi32 -lwinmm
+		$if prod && !debug {
+			#flag /SUBSYSTEM:WINDOWS /ENTRY:main
+		}
+	}
 
-	$if prod && !debug {
-		#flag -mwindows
+	$if gcc {
+		#flag -L @VMODROOT/lib/windows/mingw-w64
+		#flag -lraylib@START_LIBS -lgdi32 -lwinmm
+
+		$if prod && !debug {
+			// It nesesally because we use '-cc gcc -prod -no-prod-options' on Windows.
+			#flag -O2 -s
+			#flag -mwindows
+		}
 	}
 } $else {
-	$compile_error('Unsupported OS')
+	$compile_error('Unsupported OS.')
 }
 
 #include <raylib.h>

@@ -9,11 +9,17 @@ $ v install --git https://github.com/doccaico/raylib-v
 
 ### Build
 ```sh
-# Debug
-$ v -cc gcc -g main.v
+# gcc (debug)
+$ v -cc gcc main.v
 
-# Release
-$ v -cc gcc -prod -no-prod-options -cflags "-O2" main.v
+# gcc (release)
+$ v -cc gcc -prod -no-prod-options main.v
+
+# msvc (debug)
+$ v -cc msvc main.v
+
+# gcc (release)
+$ v -cc msvc -prod -no-prod-options main.v
 ```
 
 ### How to use
