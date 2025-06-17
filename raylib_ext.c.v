@@ -1,39 +1,12 @@
-// These are manually-made bindings for parts of the library that do not need
-// or validate custom handling for.
-// Functions that use strings get bindings here so that I can allow them to use
-// V-strings as arguments/return types instead of C-strings
-
 module raylib
 
 $if windows {
-	// #preinclude "@VMODROOT/src/c/pre.h"
+	#flag -I @VMODROOT/include
+	#flag -L @VMODROOT/lib/windows
 
-	// #flag @VMODROOT/thirdparty/raylib/src/rcore.o
-
-	// #flag -DPLATFORM_DESKTOP
-
-	#flag -I @VMODROOT/raylib
-	#flag -I @VMODROOT/raymath
-	#flag -I @VMODROOT/raygui
-	#flag -I @VMODROOT/rlgl
-
-	// #flag -I @VMODROOT/thirdparty/raylib/src/
-	// #flag -I@VMODROOT/thirdparty/raylib/src/
-	// #flag -L@VMODROOT/thirdparty/raylib/src/
-	// #flag -L@VMODROOT/
-	#flag -L @VMODROOT/libs/windows
-
-	// #flag -fno-lto
-
-	// #flag -L.
-	// #flag -I .
-
-	// #include "raylib.h"
-	// -no-prod-options -cflags "-O2"
-	// -lopengl32 -luser32 -lopengl32
 	#flag -DNOUSER -DNOSHOWWINDOW -DNOGDI -D_NDEBUG -DNDEBUG
-	#flag -lraylib@START_LIBS
-	#flag -lgdi32 -lwinmm
+
+	#flag -lraylib@START_LIBS -lgdi32 -lwinmm
 
 	$if prod && !debug {
 		#flag -mwindows
