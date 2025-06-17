@@ -18,8 +18,8 @@ $ v -cc gcc -prod -no-prod-options main.v
 # msvc (debug)
 $ v -cc msvc main.v
 
-# gcc (release)
-$ v -cc msvc -prod -no-prod-options main.v
+# msvc (release)
+$ v -cc msvc -prod -subsystem windows main.v
 ```
 
 ### How to use

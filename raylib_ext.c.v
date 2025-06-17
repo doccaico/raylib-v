@@ -7,11 +7,6 @@ $if windows {
 	$if msvc {
 		#flag -L @VMODROOT/lib/windows/msvc16
 		#flag raylib.lib user32.lib shell32.lib gdi32.lib winmm.lib
-		#flag /NODEFAULTLIB:MSVCRT
-
-		$if prod && !debug {
-			#flag /SUBSYSTEM:WINDOWS /ENTRY:main
-		}
 	}
 
 	$if gcc {
