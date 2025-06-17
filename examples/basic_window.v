@@ -1,23 +1,3 @@
-## raylib-v
-
-**-- Windows Only --**
-
-### Install
-```sh
-$ v install --git https://github.com/doccaico/raylib-v
-```
-
-### Build
-```sh
-# Debug
-$ v -cc gcc -g main.v
-
-# Release
-$ v -cc gcc -prod -no-prod-options -cflags "-O2" main.v
-```
-
-### How to use
-```v
 module main
 
 import raylib as rl
@@ -41,4 +21,3 @@ fn main() {
 		rl.end_drawing()
 	}
 }
-```
