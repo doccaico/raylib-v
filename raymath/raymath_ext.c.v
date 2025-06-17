@@ -1,4 +1,4 @@
-module math
+module raymath
 
 #flag -I @VMODROOT/include
 

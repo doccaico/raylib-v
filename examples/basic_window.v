@@ -1,23 +1,23 @@
 module main
 
-import raylib as rl
+import raylib
 
 fn main() {
 	screen_width := 800
 	screen_height := 450
 
-	rl.init_window(screen_width, screen_height, 'raylib [core] example - basic window')
-	defer { rl.close_window() }
+	raylib.init_window(screen_width, screen_height, 'raylib [core] example - basic window')
+	defer { raylib.close_window() }
 
-	rl.set_target_fps(60)
+	raylib.set_target_fps(60)
 
-	for !rl.window_should_close() {
-		rl.begin_drawing()
+	for !raylib.window_should_close() {
+		raylib.begin_drawing()
 
-		rl.clear_background(rl.raywhite)
+		raylib.clear_background(raylib.raywhite)
 
-		rl.draw_text('Congrats! You created your first window!', 190, 200, 20, rl.black)
+		raylib.draw_text('Congrats! You created your first window!', 190, 200, 20, raylib.black)
 
-		rl.end_drawing()
+		raylib.end_drawing()
 	}
 }

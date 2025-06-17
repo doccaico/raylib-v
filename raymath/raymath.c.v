@@ -1,4 +1,4 @@
-module math
+module raymath
 
 import raylib { Matrix, Vector2, Vector3, Vector4 }
 

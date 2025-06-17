@@ -1,4 +1,4 @@
-module gui
+module raygui
 
 #flag -I @VMODROOT/include
 
