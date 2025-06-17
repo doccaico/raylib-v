@@ -1,5 +1,6 @@
-module raygui
+module gui
 
-#flag -I @VMODROOT/raygui/
+#flag -I @VMODROOT/include
+
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"

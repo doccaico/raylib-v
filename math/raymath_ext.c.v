@@ -1,4 +1,5 @@
-module raymath
+module math
 
-#flag -I @VMODROOT/raymath/
+#flag -I @VMODROOT/include
+
 #include "raymath.h"

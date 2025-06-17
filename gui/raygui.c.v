@@ -1,4 +1,4 @@
-module raygui
+module gui
 
 import raylib { Color, Font, Rectangle, Vector2, Vector3 }
 
